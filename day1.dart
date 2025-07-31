@@ -13,16 +13,8 @@ class Solution {
       int a;
       int b;
 
-      if (kList.length <= i) {
-        a = 0;
-      } else {
-        a = int.parse(kList[i]);
-      }
-      if (numList.length <= i) {
-        b = 0;
-      } else {
-        b = numList[i];
-      }
+      kList.length <= i ? a = 0 : a = int.parse(kList[i]);
+      numList.length <= i ? b = 0 : b = numList[i];
 
       int c = a + b + oldN;
       if (c > 9) {
@@ -33,7 +25,7 @@ class Solution {
         oldN = 0;
       }
     }
-    if (oldN != 0){
+    if (oldN != 0) {
       newList.add(oldN);
     }
     return newList.reversed.toList();
